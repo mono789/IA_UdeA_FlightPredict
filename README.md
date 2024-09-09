@@ -5,7 +5,7 @@ Este proyecto se centra en el análisis y predicción de retrasos de vuelos util
 ## Ejecución del archivo de la Fase-1
 Este directorio contiene un archivo de Jupyter Notebook (.ipynb) correspondiente a la fase-1 del proyecto. A continuación, se describen los pasos para ejecutar el archivo.
 
-### 1. Google Colab (Recomendado)
+### 1. Google Colab
 
 **Pasos:**
 - Acceder a Google Colab.
