@@ -23,7 +23,9 @@ Este directorio contiene un archivo de Jupyter Notebook (.ipynb) correspondiente
    
   git clone https://github.com/tu-usuario/tu-repositorio.git
   
-- Navega a la carpeta del repositorio y abre el notebook:
+- Navega a la carpeta del repositorio y abre el notebook
+
+- Ejecuta cada celda del notebook.
 
 ### 3. Visual Studio Code
 
