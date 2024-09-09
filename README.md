@@ -24,9 +24,6 @@ Este directorio contiene un archivo de Jupyter Notebook (.ipynb) correspondiente
 **Pasos:**
 - Asegurarse de tener Python y Jupyter instalados en tu sistema.
 - Clona este repositorio con el siguiente comando:
-   
   git clone https://github.com/KevEstr/IA_UdeA_FlightPredict/tree/main
-  
 - Navega a la carpeta del repositorio y abre el notebook
-
 - Ejecuta cada celda del notebook.
