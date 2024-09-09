@@ -2,6 +2,10 @@
 
 Este proyecto se centra en el análisis y predicción de retrasos de vuelos utilizando datos históricos de diversas aerolíneas durante el año 2015. El objetivo es comprender los factores que influyen en los retrasos, como el aeropuerto de origen, la aerolínea y las interacciones entre aeropuertos de origen y destino, para mejorar la precisión en la predicción y proponer soluciones que anticipen estos problemas.
 
+### Integrantes:
+- Kevin Estrada Del Valle - 1036689216 - Estudiante Ingeniería de Sistemas
+- Juan Andrés Rivera Arango - 1037666069 - Estudiante Ingeniería de Sistemas
+
 ## Ejecución del archivo de la Fase-1
 Este directorio contiene un archivo de Jupyter Notebook (.ipynb) correspondiente a la fase-1 del proyecto. A continuación, se describen los pasos para ejecutar el archivo.
 
