@@ -25,19 +25,8 @@ Este directorio contiene un archivo de Jupyter Notebook (.ipynb) correspondiente
 - Asegurarse de tener Python y Jupyter instalados en tu sistema.
 - Clona este repositorio con el siguiente comando:
    
-  git clone https://github.com/tu-usuario/tu-repositorio.git
+  git clone https://github.com/KevEstr/IA_UdeA_FlightPredict/tree/main
   
 - Navega a la carpeta del repositorio y abre el notebook
 
 - Ejecuta cada celda del notebook.
-
-### 3. Visual Studio Code
-
-**Pasos:**
-- Asegúrate de tener Visual Studio Code instalado junto con la extensión Jupyter.
-- Clona este repositorio utilizando el siguiente comando:
-  
-  git clone https://github.com/tu-usuario/tu-repositorio.git
-
-- Abre el repositorio en VS Code.
-- Abre el archivo .ipynb y usa la opción de ejecutar cada celda en el notebook desde el entorno de VS Code.
