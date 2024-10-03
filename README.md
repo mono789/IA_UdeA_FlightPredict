@@ -1,42 +1,42 @@
-# IA_UdeA_FlightPredict
+# ✈️ IA_UdeA_FlightPredict
 
-Este proyecto se centra en el análisis y predicción de retrasos de vuelos utilizando datos históricos de diversas aerolíneas durante el año 2015. El objetivo es comprender los factores que influyen en los retrasos, como el aeropuerto de origen, la aerolínea y las interacciones entre aeropuertos de origen y destino, para mejorar la precisión en la predicción y proponer soluciones que anticipen estos problemas.
+This project focuses on the analysis and prediction of flight delays using historical data from various airlines during 2015. The goal is to understand the factors that influence delays, such as the origin airport, the airline, and the interactions between origin and destination airports, to improve prediction accuracy and propose solutions to anticipate these issues.
 
-### Integrantes:
-- **Kevin Estrada Del Valle** - 1036689216 - Estudiante Ingeniería de Sistemas
-- **Juan Andrés Rivera Arango** - 1037666069 - Estudiante Ingeniería de Sistemas
+### 👥 Team Members:
+- **Kevin Estrada Del Valle** - 1036689216 - Systems Engineering Student
+- **Juan Andrés Rivera Arango** - 1037666069 - Systems Engineering Student
 
-## Ejecución del archivo de la Fase-1
+## 🚀 Running the Phase-1 File
 
-Este directorio contiene un archivo de Jupyter Notebook (`.ipynb`) correspondiente a la fase-1 del proyecto. A continuación, se describen los pasos para ejecutar el archivo.
+This directory contains a Jupyter Notebook file (`.ipynb`) corresponding to phase-1 of the project. Below are the steps to run the file.
 
 ### 1. Google Colab
 
-**Pasos:**
+**Steps:**
 
-1. Acceder a [Google Colab](https://colab.research.google.com/).
-2. En la esquina superior derecha, haz clic en **"Abrir cuaderno"**.
-3. Selecciona la opción **GitHub**.
-4. Ingresa la URL de este repositorio.
-5. Abre el archivo `.ipynb` correspondiente a la fase-1.
-6. Haz clic en **"Ejecutar"** para ejecutar las celdas del notebook.
+1. Go to [Google Colab](https://colab.research.google.com/).
+2. In the upper right corner, click **"Open notebook"**.
+3. Select the **GitHub** option.
+4. Enter the URL of this repository.
+5. Open the `.ipynb` file corresponding to phase-1.
+6. Click **"Run"** to execute the notebook cells.
 
-### 2. Jupyter Notebook en tu entorno local
+### 2. Jupyter Notebook on Your Local Environment
 
-**Pasos:**
+**Steps:**
 
-1. Asegúrate de tener Python y Jupyter instalados en tu sistema.
-2. Clona este repositorio con el siguiente comando:
+1. Make sure you have Python and Jupyter installed on your system.
+2. Clone this repository with the following command:
 
     ```bash
     git clone https://github.com/KevEstr/IA_UdeA_FlightPredict/tree/main
     ```
 
-3. Navega a la carpeta del repositorio y abre el notebook:
+3. Navigate to the repository folder and open the notebook:
 
     ```bash
     cd IA_UdeA_FlightPredict
     jupyter notebook
     ```
 
-4. Ejecuta cada celda del notebook.
+4. Run each cell of the notebook.
