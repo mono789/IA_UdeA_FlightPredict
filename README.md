@@ -47,7 +47,7 @@ This directory contains a Jupyter Notebook file (`.ipynb`) corresponding to phas
 
 ## 🛠️ Phase-2: Model Training and Prediction
 
-In phase-2, we focus on training a machine learning model to predict flight delays based on the historical dataset. Docker is used to containerize the environment, ensuring consistency across different systems. Below are the detailed steps to build the Docker image, train the model, and make predictions.
+In phase-2, we focus on training a model to predict flight delays based on the historical dataset. Docker is used to containerize the environment, ensuring consistency across different systems. Below are the detailed steps to build the Docker image, train the model, and make predictions.
 
 ### 🐳 Docker Setup and Model Training
 
@@ -59,7 +59,7 @@ First, you need to create a Docker image based on the `Dockerfile` located in th
 
 **Steps:**
 
-1. Open a terminal and navigate to the project folder where the `Dockerfile` is located.
+1. Open a terminal and navigate to the project folder where the `Dockerfile` is located (in this case, the root of fase-2)
 2. Build the Docker image using the following command:
 
     ```bash
@@ -70,11 +70,11 @@ First, you need to create a Docker image based on the `Dockerfile` located in th
 
 ### 2. Training the Model
 
-Once the Docker image is built, you can train the machine learning model using the provided training dataset (`train_df.csv`).
+Once the Docker image is built, you can train the model using the provided training dataset (`train_df.csv`).
 
 **Steps:**
 
-1. In the terminal, navigate to the project folder and run the following command to train the model:
+1. In the terminal, navigate to the root of the project and run the following command to train the model:
 
     ```bash
     docker run -it -v ${PWD}:/app fase_2 python train.py train_df.csv
@@ -90,6 +90,22 @@ Once the Docker image is built, you can train the machine learning model using t
 ### 3. Making Predictions
 
 After training the model, you can use it to make predictions. You will need the airline code (`codigo_aerolinea`) and the trained model file (`modelo_entrenado.pkl`).
+
+The **airline code** refers to the abbreviation for each airline that we used to train the model. Since the idea is to predict the delay time for a specific airline, this abbreviation is required as input.
+
+Additionally, a clean `train.csv` file is required as part of the phase 2 process, where the corresponding predictions will be made. Ensure that the dataset adheres to the expected structure for the model. The required columns are as follows:
+
+- `AIRLINE`
+- `ORIGIN_AIRPORT`
+- `DESTINATION_AIRPORT`
+- `SCHEDULED_DEPARTURE`
+- `DEPARTURE_TIME`
+- `DEPARTURE_DELAY`
+- `SCHEDULED_ARRIVAL`
+- `ARRIVAL_TIME`
+- `ARRIVAL_DELAY`
+- `SCHEDULED_TIME`
+- `ELAPSED_TIME`
 
 **Steps:**
 
