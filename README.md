@@ -6,6 +6,8 @@ This project focuses on the analysis and prediction of flight delays using histo
 - **Kevin Estrada Del Valle** - 1036689216 - Systems Engineering Student
 - **Juan Andrés Rivera Arango** - 1037666069 - Systems Engineering Student
 
+---
+
 ## 🚀 Running the Phase-1 File
 
 This directory contains a Jupyter Notebook file (`.ipynb`) corresponding to phase-1 of the project. Below are the steps to run the file.
@@ -40,3 +42,75 @@ This directory contains a Jupyter Notebook file (`.ipynb`) corresponding to phas
     ```
 
 4. Run each cell of the notebook.
+
+---
+
+## 🛠️ Phase-2: Model Training and Prediction
+
+In phase-2, we focus on training a machine learning model to predict flight delays based on the historical dataset. Docker is used to containerize the environment, ensuring consistency across different systems. Below are the detailed steps to build the Docker image, train the model, and make predictions.
+
+### 🐳 Docker Setup and Model Training
+
+To run the training and prediction in phase-2, we use Docker to containerize the environment. This ensures that all necessary dependencies and the execution environment are standardized. Follow these steps:
+
+### 1. Building the Docker Image
+
+First, you need to create a Docker image based on the `Dockerfile` located in the project folder.
+
+**Steps:**
+
+1. Open a terminal and navigate to the project folder where the `Dockerfile` is located.
+2. Build the Docker image using the following command:
+
+    ```bash
+    docker build -t fase_2 .
+    ```
+
+   This command creates an image named `fase_2` based on the `Dockerfile`. The image contains all the necessary dependencies for training and running the model.
+
+### 2. Training the Model
+
+Once the Docker image is built, you can train the machine learning model using the provided training dataset (`train_df.csv`).
+
+**Steps:**
+
+1. In the terminal, navigate to the project folder and run the following command to train the model:
+
+    ```bash
+    docker run -it -v ${PWD}:/app fase_2 python train.py train_df.csv
+    ```
+
+   - `-it`: Runs Docker interactively.
+   - `-v ${PWD}:/app`: Mounts the current working directory into the Docker container at `/app`.
+   - `fase_2`: The name of the Docker image.
+   - `python train.py train_df.csv`: Executes the training script, `train.py`, using the `train_df.csv` file as input.
+
+   This command will train the model and save the resulting trained model (`modelo_entrenado.pkl`) in the current directory.
+
+### 3. Making Predictions
+
+After training the model, you can use it to make predictions. You will need the airline code (`codigo_aerolinea`) and the trained model file (`modelo_entrenado.pkl`).
+
+**Steps:**
+
+1. In the terminal, navigate to the project folder and run the following command to make predictions:
+
+    ```bash
+    docker run -it -v ${PWD}:/app fase_2 python predict.py train_df.csv codigo_aerolinea modelo_entrenado.pkl
+    ```
+
+   - `train_df.csv`: The dataset used to make predictions.
+   - `codigo_aerolinea`: Replace this with the actual airline code for which you want to predict delays.
+   - `modelo_entrenado.pkl`: The trained model file generated during the training phase.
+
+   This command will output the predicted delays based on the input airline code and the trained model.
+
+---
+
+### 📝 Summary of What’s Happening
+
+- **Docker Image Creation:** We create a Docker image to ensure all dependencies are installed and the environment is consistent across systems.
+- **Model Training:** The `train.py` script is used to train a machine learning model based on the provided dataset (`train_df.csv`). The resulting trained model is saved as `modelo_entrenado.pkl`.
+- **Prediction:** The `predict.py` script is used to predict flight delays for a given airline, based on the trained model and the dataset.
+
+These steps ensure a smooth and consistent environment for training the model and making predictions. The output of the predictions can be used to anticipate flight delays and propose operational improvements.
