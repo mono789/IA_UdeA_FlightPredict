@@ -107,6 +107,8 @@ Additionally, a clean `train.csv` file is required as part of the phase 2 proces
 - `SCHEDULED_TIME`
 - `ELAPSED_TIME`
 
+In any case, there is an example within the folder that shows the structure to follow for constructing the `train.csv` file.
+
 **Steps:**
 
 1. In the terminal, navigate to the project folder and run the following command to make predictions:
@@ -126,7 +128,7 @@ Additionally, a clean `train.csv` file is required as part of the phase 2 proces
 ### 📝 Summary of What’s Happening
 
 - **Docker Image Creation:** We create a Docker image to ensure all dependencies are installed and the environment is consistent across systems.
-- **Model Training:** The `train.py` script is used to train a machine learning model based on the provided dataset (`train_df.csv`). The resulting trained model is saved as `modelo_entrenado.pkl`.
+- **Model Training:** The `train.py` script is used to train a model based on the provided dataset (`train_df.csv`). The resulting trained model is saved as `modelo_entrenado.pkl`.
 - **Prediction:** The `predict.py` script is used to predict flight delays for a given airline, based on the trained model and the dataset.
 
 These steps ensure a smooth and consistent environment for training the model and making predictions. The output of the predictions can be used to anticipate flight delays and propose operational improvements.
