@@ -8,14 +8,22 @@ def create_df(df):
     df2 = df[['SCHEDULED_DEPARTURE','SCHEDULED_ARRIVAL',
                 'ORIGIN_AIRPORT','DESTINATION_AIRPORT','DEPARTURE_DELAY','AIRLINE']]
     df2.dropna(how='any', inplace=True)
-    df2['SCHEDULED_DEPARTURE'] = pd.to_datetime(df2['SCHEDULED_DEPARTURE'])
-    df2['SCHEDULED_ARRIVAL'] = pd.to_datetime(df2['SCHEDULED_ARRIVAL'])
+
+    # Especificar el formato correcto de la fecha
+    df2['SCHEDULED_DEPARTURE'] = pd.to_datetime(df2['SCHEDULED_DEPARTURE'], format="%d/%m/%Y %H:%M", dayfirst=True, errors='coerce')
+    df2['SCHEDULED_ARRIVAL'] = pd.to_datetime(df2['SCHEDULED_ARRIVAL'], format="%d/%m/%Y %H:%M", dayfirst=True, errors='coerce')
+
+
+
     df2['weekday'] = df2['SCHEDULED_DEPARTURE'].dt.weekday
     df2['DELAY_CLASS'] = df2['DEPARTURE_DELAY'].apply(lambda x: 1 if x >= 15 else 0)
+
     fct = lambda x: x.hour*3600 + x.minute*60 + x.second
     df2['heure_depart'] = df2['SCHEDULED_DEPARTURE'].dt.time.apply(fct)
     df2['heure_arrivee'] = df2['SCHEDULED_ARRIVAL'].dt.time.apply(fct)
+
     return df2
+
 
 parser = argparse.ArgumentParser(description="Realizar predicciones usando un modelo CatBoost entrenado.")
 parser.add_argument("csv_file", type=str, help="Ruta al archivo CSV con los datos de entrada para predecir")
@@ -44,7 +52,7 @@ X = np.hstack((airport_encoded, df3[['heure_depart', 'heure_arrivee', 'weekday']
 predictions = model.predict(X)
 df3['Prediccion_Retraso'] = predictions
 
-output_file = "predicciones_todas_aerolineas.csv"
+output_file = "predicciones_aerolineas.csv"
 df3.to_csv(output_file, index=False)
 
 print(f"Predicciones guardadas en {output_file}")

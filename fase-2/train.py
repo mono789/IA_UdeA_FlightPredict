@@ -24,8 +24,8 @@ def create_df(df):
                 'ORIGIN_AIRPORT','DESTINATION_AIRPORT','DEPARTURE_DELAY','AIRLINE']]
     df2.dropna(how='any', inplace=True)
     # Convertir las columnas de fecha a datetime
-    df2['SCHEDULED_DEPARTURE'] = pd.to_datetime(df2['SCHEDULED_DEPARTURE'])
-    df2['SCHEDULED_ARRIVAL'] = pd.to_datetime(df2['SCHEDULED_ARRIVAL'])
+    df2['SCHEDULED_DEPARTURE'] = pd.to_datetime(df2['SCHEDULED_DEPARTURE'], dayfirst=True)
+    df2['SCHEDULED_ARRIVAL'] = pd.to_datetime(df2['SCHEDULED_ARRIVAL'], dayfirst=True)
 
     # Añadir columna con el día de la semana
     df2['weekday'] = df2['SCHEDULED_DEPARTURE'].apply(lambda x: x.weekday())
