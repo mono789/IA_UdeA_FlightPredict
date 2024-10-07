@@ -31,7 +31,7 @@ This directory contains a Jupyter Notebook file (`.ipynb`) corresponding to phas
 2. Clone this repository with the following command:
 
     ```bash
-    git clone https://github.com/KevEstr/IA_UdeA_FlightPredict/tree/main
+    git clone https://github.com/KevEstr/IA_UdeA_FlightPredict
     ```
 
 3. Navigate to the repository folder and open the notebook:
@@ -89,9 +89,7 @@ Once the Docker image is built, you can train the model using the provided train
 
 ### 3. Making Predictions
 
-After training the model, you can use it to make predictions. You will need the airline code (`codigo_aerolinea`) and the trained model file (`modelo_entrenado.pkl`).
-
-The **airline code** refers to the abbreviation for each airline that we used to train the model. Since the idea is to predict the delay time for a specific airline, this abbreviation is required as input.
+After training the model, you can use it to make predictions. 
 
 Additionally, a clean `train.csv` file is required as part of the phase 2 process, where the corresponding predictions will be made. Ensure that the dataset adheres to the expected structure for the model. The required columns are as follows:
 
@@ -114,7 +112,7 @@ In any case, there is an example within the folder that shows the structure to f
 1. In the terminal, navigate to the project folder and run the following command to make predictions:
 
     ```bash
-    docker run -it -v ${PWD}:/app fase_2 python predict.py train_df.csv codigo_aerolinea modelo_entrenado.pkl
+    docker run -it -v ${PWD}:/app fase_2 python predict.py train_df.csv modelo_entrenado.pkl
     ```
 
    - `train_df.csv`: The dataset used to make predictions.
