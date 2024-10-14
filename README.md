@@ -59,7 +59,12 @@ First, you need to create a Docker image based on the `Dockerfile` located in th
 
 **Steps:**
 
-1. Open a terminal and navigate to the project folder where the `Dockerfile` is located (in this case, the root of fase-2)
+1. Open a terminal and navigate to the project folder where the `Dockerfile` is located (in this case, the root of fase-2) using the `cd` command:
+
+```bash
+   cd fase-2
+```
+
 2. Build the Docker image using the following command:
 
     ```bash
@@ -67,6 +72,13 @@ First, you need to create a Docker image based on the `Dockerfile` located in th
     ```
 
    This command creates an image named `fase_2` based on the `Dockerfile`. The image contains all the necessary dependencies for training and running the model.
+
+To run this project, you must have the following files in the project directory:
+
+1. **`train_df.csv`** - The dataset used for training the model. This file contains historical data on flight delays.
+2. **`test_df.csv`** - The dataset used for making predictions. Ensure it follows the structure required by the model for accurate predictions.
+
+Both files should contain the necessary columns as described in the project documentation, and be placed in the project folder before running the training and prediction scripts.
 
 ### 2. Training the Model
 
@@ -91,7 +103,7 @@ Once the Docker image is built, you can train the model using the provided train
 
 After training the model, you can use it to make predictions. 
 
-Additionally, a clean `train.csv` file is required as part of the phase 2 process, where the corresponding predictions will be made. Ensure that the dataset adheres to the expected structure for the model. The required columns are as follows:
+Additionally, a `train.csv` file is required as part of the phase 2 process, where the corresponding predictions will be made. Ensure that the dataset adheres to the expected structure for the model. The required columns are as follows:
 
 - `AIRLINE`
 - `ORIGIN_AIRPORT`
