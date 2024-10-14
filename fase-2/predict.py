@@ -11,16 +11,17 @@ def create_df(df):
 
     # Especificar el formato correcto de la fecha
     df2['SCHEDULED_DEPARTURE'] = pd.to_datetime(df2['SCHEDULED_DEPARTURE'], format="%d/%m/%Y %H:%M", dayfirst=True, errors='coerce')
-    df2['SCHEDULED_ARRIVAL'] = pd.to_datetime(df2['SCHEDULED_ARRIVAL'], format="%d/%m/%Y %H:%M", dayfirst=True, errors='coerce')
+    df2['SCHEDULED_ARRIVAL'] = pd.to_datetime(df2['SCHEDULED_ARRIVAL'], format='%H:%M:%S').dt.time  # Convierte a objeto de tiempo
 
 
 
     df2['weekday'] = df2['SCHEDULED_DEPARTURE'].dt.weekday
     df2['DELAY_CLASS'] = df2['DEPARTURE_DELAY'].apply(lambda x: 1 if x >= 15 else 0)
 
+    # Convertir las horas a segundos
     fct = lambda x: x.hour*3600 + x.minute*60 + x.second
-    df2['heure_depart'] = df2['SCHEDULED_DEPARTURE'].dt.time.apply(fct)
-    df2['heure_arrivee'] = df2['SCHEDULED_ARRIVAL'].dt.time.apply(fct)
+    df2['heure_depart'] = df2['SCHEDULED_DEPARTURE'].apply(lambda x: fct(x.time()) if isinstance(x, pd.Timestamp) else fct(x))
+    df2['heure_arrivee'] = df2['SCHEDULED_ARRIVAL'].apply(lambda x: fct(x.time()) if isinstance(x, pd.Timestamp) else fct(x))
 
     return df2
 

@@ -24,8 +24,8 @@ def create_df(df):
                 'ORIGIN_AIRPORT','DESTINATION_AIRPORT','DEPARTURE_DELAY','AIRLINE']]
     df2.dropna(how='any', inplace=True)
     # Convertir las columnas de fecha a datetime
-    df2['SCHEDULED_DEPARTURE'] = pd.to_datetime(df2['SCHEDULED_DEPARTURE'], dayfirst=True)
-    df2['SCHEDULED_ARRIVAL'] = pd.to_datetime(df2['SCHEDULED_ARRIVAL'], dayfirst=True)
+    df2['SCHEDULED_DEPARTURE'] = pd.to_datetime(df2['SCHEDULED_DEPARTURE'], format="%d/%m/%Y %H:%M", dayfirst=True,)    
+    df2['SCHEDULED_ARRIVAL'] = pd.to_datetime(df2['SCHEDULED_ARRIVAL'], format='%H:%M:%S').dt.time  # Convierte a objeto de tiempo
 
     # Añadir columna con el día de la semana
     df2['weekday'] = df2['SCHEDULED_DEPARTURE'].apply(lambda x: x.weekday())
@@ -35,8 +35,8 @@ def create_df(df):
 
     # Convertir las horas a segundos
     fct = lambda x: x.hour*3600 + x.minute*60 + x.second
-    df2['heure_depart'] = df2['SCHEDULED_DEPARTURE'].apply(lambda x: fct(x.time()) if isinstance(x, pd.Timestamp) else None)
-    df2['heure_arrivee'] = df2['SCHEDULED_ARRIVAL'].apply(lambda x: fct(x.time()) if isinstance(x, pd.Timestamp) else None)
+    df2['heure_depart'] = df2['SCHEDULED_DEPARTURE'].apply(lambda x: fct(x.time()) if isinstance(x, pd.Timestamp) else fct(x))
+    df2['heure_arrivee'] = df2['SCHEDULED_ARRIVAL'].apply(lambda x: fct(x.time()) if isinstance(x, pd.Timestamp) else fct(x))
 
     return df2
 
