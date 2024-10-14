@@ -103,7 +103,7 @@ Once the Docker image is built, you can train the model using the provided train
 
 After training the model, you can use it to make predictions. 
 
-Additionally, a `train.csv` file is required as part of the phase 2 process, where the corresponding predictions will be made. Ensure that the dataset adheres to the expected structure for the model. The required columns are as follows:
+As mentioned earlier, a `train.csv` file is required as part of the phase 2 process, where the corresponding predictions will be made. Ensure that the dataset adheres to the expected structure for the model. The required columns are as follows:
 
 - `AIRLINE`
 - `ORIGIN_AIRPORT`
