@@ -122,7 +122,7 @@ In any case, there is an example within the folder that shows the structure to f
 
 ---
 
-### 4. Running the Project with `run-scripts.ipynb`
+### [OPTIONAL] Running the Project with `run-scripts.ipynb`
 
 As an alternative, we have created a centralized script file called `run-scripts.ipynb`. This file consolidates all the necessary steps and commands for the project into one place, allowing you to execute everything without needing to run multiple scripts individually.
 
