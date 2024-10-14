@@ -60,10 +60,10 @@ First, you need to create a Docker image based on the `Dockerfile` located in th
 **Steps:**
 
 1. Open a terminal and navigate to the project folder where the `Dockerfile` is located (in this case, the root of fase-2) using the `cd` command:
-
-```bash
-   cd fase-2
-```
+    
+    ```bash
+       cd fase-2
+    ```
 
 2. Build the Docker image using the following command:
 
