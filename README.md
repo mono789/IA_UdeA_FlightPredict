@@ -116,13 +116,24 @@ In any case, there is an example within the folder that shows the structure to f
     ```
 
    - `train_df.csv`: The dataset used to make predictions.
-   - `codigo_aerolinea`: Replace this with the actual airline code for which you want to predict delays.
    - `modelo_entrenado.pkl`: The trained model file generated during the training phase.
 
    This command will output the predicted delays based on the input airline code and the trained model.
 
 ---
 
+### 4. Running the Project with `run-scripts.ipynb`
+
+As an alternative, we have created a centralized script file called `run-scripts.ipynb`. This file consolidates all the necessary steps and commands for the project into one place, allowing you to execute everything without needing to run multiple scripts individually.
+
+**Steps:**
+
+1. Open the `run-scripts.ipynb` file located in the project directory.
+2. Execute each section of the file sequentially to perform the entire process, from training the model to making predictions, without having to run each script separately.
+
+This provides a streamlined approach to manage the project from start to finish.
+
+---
 ### 📝 Summary of What’s Happening
 
 - **Docker Image Creation:** We create a Docker image to ensure all dependencies are installed and the environment is consistent across systems.
