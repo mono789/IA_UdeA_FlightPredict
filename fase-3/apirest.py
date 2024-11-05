@@ -19,9 +19,9 @@ def predict():
         return jsonify({"error": "No selected file"}), 400
     file.save('test_data.csv') # Guarda el archivo CSV en una ubicación temporal
     
-    # Ejecuta el script predict.py y pasa la ruta del archivo CSV
+    # Ejecuta el script predict.py y pasa la ruta del archivo CSV con los datos de entrada.
     result = subprocess.run(
-        ['python', 'predict.py', 'test_data.csv', 'modelo_entrenado.pkl'],  # Pasa la ruta del archivo CSV como argumento
+        ['python', 'predict.py', 'test_data.csv', 'modelo_entrenado.pkl'],  # Pasa la ruta del archivo CSV como argumento, y el modelo entrenado como argumento
         text=True,
         capture_output=True
     )
@@ -48,7 +48,7 @@ def train():
         return jsonify({"error": "No selected file"}), 400
     file.save('train_data.csv')
     
-    # Ejecuta el script train.py pasando la ruta del archivo CSV
+    # Ejecuta el script train.py pasando la ruta del archivo CSV como argumento
     result = subprocess.run(
         ['python', 'train.py', 'train_data.csv'],
         capture_output=True,
