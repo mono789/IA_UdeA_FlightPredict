@@ -157,7 +157,7 @@ These steps ensure a smooth and consistent environment for training the model an
 ---
 ## 🖥️ Phase-3: REST API for Flight Delay Prediction
 
-In Phase-3, we extend the project by creating a RESTful API to expose the flight delay prediction model as a service. This enables users or other applications to make HTTP requests to predict flight delays based on input parameters, streamlining access to the model's predictions. The API is built using Flask (or another suitable framework) and is containerized using Docker to maintain consistency in deployment across various environments.
+In Phase-3, we extend the project by creating a RESTful API to expose the flight delay prediction model as a service. This enables users or other applications to make HTTP requests to predict flight delays based on input parameters, streamlining access to the model's predictions. The API is built using Flask and is containerized using Docker to maintain consistency in deployment across various environments.
 
 This phase includes two primary files:
 
