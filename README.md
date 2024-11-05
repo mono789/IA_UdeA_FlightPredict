@@ -153,3 +153,92 @@ This provides a streamlined approach to manage the project from start to finish.
 - **Prediction:** The `predict.py` script is used to predict flight delays for a given airline, based on the trained model and the dataset.
 
 These steps ensure a smooth and consistent environment for training the model and making predictions. The output of the predictions can be used to anticipate flight delays and propose operational improvements.
+
+---
+## 🖥️ Phase-3: REST API for Flight Delay Prediction
+
+In Phase-3, we extend the project by creating a RESTful API to expose the flight delay prediction model as a service. This enables users or other applications to make HTTP requests to predict flight delays based on input parameters, streamlining access to the model's predictions. The API is built using Flask (or another suitable framework) and is containerized using Docker to maintain consistency in deployment across various environments.
+
+This phase includes two primary files:
+
+- **`apirest.py`**: The REST API server.
+- **`client.py`**: A client script for testing and interacting with the API.
+
+The API exposes two main endpoints:
+
+- **`POST /predict:`** For predicting delays based on flight information.
+- **`POST /train:`** For retraining the model with new or updated data.
+
+### Overview of the API
+
+The REST API serves as a wrapper for the trained model, enabling users to send POST requests with flight data to obtain predictions. It exposes one main endpoint that accepts flight data and responds with predicted delay times.
+
+### Setting Up the API with Docker
+Follow these steps to build and run the API server in a Docker container.
+
+1. **Build the Docker Image**:
+    1. Ensure you are in the project directory containing the Dockerfile.
+        ```bash
+        cd fase-3
+        ``` 
+    2. Run the following command to build the Docker image:
+     
+        ```bash
+        docker build -t fase_3 .
+        ``` 
+        This command creates a Docker image named fase_3 with all necessary dependencies for the API. 
+2. **Running the API Server:**
+    1. After building the Docker image, start the API server using:
+
+        ```bash
+        docker run -it -p 5001:5000 fase_3
+        ```
+        This command runs apirest.py, the API server file, on port 5000, making it accessible via http://localhost:5000.
+
+### API Endpoint Details
+The REST API provides the following endpoint:
+
+### `POST /train:`
+**Description:** Retrains the model with a new dataset provided in CSV format.
+
+**Endpoint:** http://localhost:5000/train
+
+**Method:** POST
+
+**Input Format:** Multipart form data, with the CSV file containing the training data.
+
+**Required File:** A CSV file (train_df.csv) containing updated or new training data. It should have the same structure as the original training dataset. Ensure it follows the structure required by the model for accurate training.
+
+### `POST /predict:`
+**Description:** This endpoint accepts flight data and returns a prediction on the delay.
+
+**Endpoint:** http://localhost:5000/predict
+
+**Method:** POST
+
+**Input Format:** Multipart form data, with the CSV file containing the training data.
+
+**Required File:** A CSV file (test_df.csv) containing new testing data. It should have the same structure as the original training dataset. Ensure it follows the structure required by the model for accurate predictions.
+
+## Testing the API with client.py
+The client.py script simplifies interaction with the API by sending requests to both the /predict and /train endpoints with appropriate data formats.
+
+1. **Running Predictions:**
+To make a prediction, `client.py` sends a request to `/predict `with sample flight data and prints the predicted delay.
+
+2. **Retraining the Model:** To retrain the model, `client.py` can also be configured to send a CSV file to the `/train` endpoint.
+
+Run `client.py` to interact with the API endpoints:
+
+```bash
+python client.py
+```
+
+### 📝Summary of Phase-3
+1. **Containerization:** The API is encapsulated in a Docker container for consistent deployment.
+2. **Predictive Service:** The /predict endpoint uses the trained model to provide delay predictions based on real-time flight data.
+3. **Retraining Functionality:** The /train endpoint enables dynamic retraining of the model with updated data.
+4. **Ease of Use:** The client.py script enables easy testing and interaction with both endpoints.
+
+This phase makes the predictive model accessible to external applications or services and enables continual model updates with fresh data.
+    
