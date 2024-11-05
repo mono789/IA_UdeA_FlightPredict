@@ -216,7 +216,7 @@ The REST API provides the following endpoint:
 
 **Method:** POST
 
-**Input Format:** Multipart form data, with the CSV file containing the training data.
+**Input Format:** Multipart form data, with the CSV file containing the predicting data.
 
 **Required File:** A CSV file (test_df.csv) containing new testing data. It should have the same structure as the original training dataset. Ensure it follows the structure required by the model for accurate predictions.
 
