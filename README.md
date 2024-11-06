@@ -201,8 +201,6 @@ The REST API provides the following endpoint:
 ### `POST /train:`
 **Description:** Retrains the model with a new dataset provided in CSV format.
 
-**Endpoint:** http://localhost:5000/train
-
 **Method:** POST
 
 **Input Format:** Multipart form data, with the CSV file containing the training data.
@@ -211,8 +209,6 @@ The REST API provides the following endpoint:
 
 ### `POST /predict:`
 **Description:** This endpoint accepts flight data and returns a prediction on the delay.
-
-**Endpoint:** http://localhost:5000/predict
 
 **Method:** POST
 
