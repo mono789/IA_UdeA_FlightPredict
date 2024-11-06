@@ -224,7 +224,7 @@ To make a prediction, `client.py` sends a request to `/predict `with sample flig
 
 2. **Retraining the Model:** To retrain the model, `client.py` can also be configured to send a CSV file to the `/train` endpoint.
 
-Run `client.py` to interact with the API endpoints:
+Run `client.py` in other bash terminal to interact with the API endpoints:
 
 ```bash
 python client.py
