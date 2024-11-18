@@ -193,7 +193,7 @@ Follow these steps to build and run the API server in a Docker container.
         ```bash
         docker run -it -p 5001:5000 fase_3
         ```
-        This command runs apirest.py, the API server file, on port 5000, making it accessible via http://localhost:5000.
+        This command runs apirest.py, the API server file, on port 5000.
 
 ### API Endpoint Details
 The REST API provides the following endpoint:
